@@ -1,0 +1,10 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherHistoryApp.MainPage">
+    <StackLayout Margin="20">
+        <Entry x:Name="cityEntry" Placeholder="Введите город"/>
+        <Button Text="Показать информацию" Clicked="OnShowInfoClicked"/>
+        <Label x:Name="weatherLabel" Text="Погода будет показана здесь"/>
+        <Label x:Name="factLabel" Text="Исторический факт будет показан здесь"/>
+    </StackLayout>
+</ContentPage>
