@@ -51,3 +51,28 @@ private async Task<string> GetWeatherAsync(string city)
         return $"Ошибка: {ex.Message}";
     }
 }
+
+##### Метод для получения факта о кошках
+```csharp private async Task<string> GetCatFactAsync()
+{
+    string url = "https://catfact.ninja/fact";
+
+    try
+    {
+        var response = await _httpClient.GetAsync(url);
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response.Content.ReadAsStringAsync();
+            var fact = JsonConvert.DeserializeObject<CatFact>(content);
+            return fact.Fact;
+        }
+        else
+        {
+            return "Не удалось получить факт о кошках.";
+        }
+    }
+    catch (Exception ex)
+    {
+        return $"Ошибка: {ex.Message}";
+    }
+}
